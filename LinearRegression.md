@@ -20,6 +20,24 @@ confint(model, level = 0.95)
 ### Identify High Leverage Point
 
 #### Leverage Score 
+
+![image](https://note.youdao.com/yws/public/resource/0e29b13ca4589bcb98e3c7e0e7314081/xmlnote/F1ACB33FCBEA4F7AA2D5F2A18DC6F6CD/59302)
+
+The equation can abbreviate to 
+
+![image](https://latex.codecogs.com/gif.latex?%5Cwidehat%7By%7D%20%3D%20Hy)
+
+
+
+
+
+#### Threshold
+
+Threshold of leverage score  ![equation](https://latex.codecogs.com/gif.latex?2%28p%20&plus;%201%29/n)
+
+- n : Observation size
+- p : predict variable size
+
 ```
 n <- nrow(model.matrix(regwagecsquares)); 
 p <- ncol(model.matrix(regwagecsquares)) 
