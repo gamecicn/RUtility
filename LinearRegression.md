@@ -44,12 +44,13 @@ Threshold of leverage score  : 2(p + 1) / n
 ```
 n <- nrow(beer)
 p <- 3
-th <- 2 * ( p + 1) / n
+lev_scores <- 2 * ( p + 1) / n
+
 ```
 
 #### Caculate each data's threshold score 
 ```
-hatvalues(model = modle)
+lev_scores <- hatvalues(model = modle)
 ```
 
 
