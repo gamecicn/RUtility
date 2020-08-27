@@ -1,6 +1,5 @@
 
-beer <- read.csv("Consumo_cerveja.csv",
-                 stringsAsFactors = FALSE, sep = ",",dec=",", nrows = 365)
+beer <- read.csv("Consumo_cerveja.csv", stringsAsFactors = FALSE, sep = ",",dec=",", nrows = 365)
 # rename the variables
 beer$date <- beer$Data
 beer$temp_median_c <- beer$Temperatura.Media..C.
