@@ -38,3 +38,37 @@ plot(regwagecsquares,which=4,col=c("blue4"))
 ```
 plot(regwagecsquares,which=5,col=c("blue4"))
 ```
+
+
+#### Validation and MES Evaluation
+
+
+```
+set.seed(123) 
+train_index <- sample(nrow(wages),round(0.7*nrow(wages)),replace=F) 
+train <- wages[train_index,] 
+test <- wages[-train_index,] 
+regwagecsquares_train <- lm(bsal~sex+seniorc+agec+agec2+educc+experc+experc2,data=train) 
+y_test_pred <- predict(regwagecsquares_train,test) 
+
+temp <- cbind(test$bsal,y_test_pred); 
+colnames(temp) <- c("Truth","Predicted"); 
+temp[1:5,]
+
+# MES 
+
+testMSE <- mean((test$bsal - y_test_pred)^2); 
+testMSE
+
+# Square MES 
+
+sqrt(testMSE)
+```
+
+
+
+
+
+
+
+
