@@ -32,21 +32,29 @@ these elements consist
 
 ![image](https://latex.codecogs.com/gif.latex?%5CLARGE%20h_%7Bii%7D)
 
-
+![image](https://note.youdao.com/yws/public/resource/0e29b13ca4589bcb98e3c7e0e7314081/xmlnote/0E35D88EAD754ED5B9210F417F4E06D0/59304)
 
 #### Threshold
 
-Threshold of leverage score  ![equation](https://latex.codecogs.com/gif.latex?2%28p%20&plus;%201%29/n)
+Threshold of leverage score  : 2(p + 1) / n
 
 - n : Observation size
 - p : predict variable size
 
 ```
-n <- nrow(model.matrix(regwagecsquares)); 
-p <- ncol(model.matrix(regwagecsquares)) 
-lev_scores <- hatvalues(regwagecsquares) 
-#can also use influence(regwagecsquares)$hat 
+n <- nrow(beer)
+p <- 3
+th <- 2 * ( p + 1) / n
+```
 
+#### Caculate each data's threshold score 
+```
+hatvalues(model = modle)
+```
+
+
+#### Plot 
+```
 plot(lev_scores,col=ifelse(lev_scores > (2*p/n), 'red2', 'navy'),type="h", ylab="Leverage score",xlab="Index",main="Leverage Scores for all observations") 
 text(x=c(1:n)[lev_scores > (2*p/n)]+c(rep(2,4),-2,2),y=lev_scores[lev_scores > (2*p/n)], labels=c(1:n)[lev_scores > (2*p/n)])
 ```
