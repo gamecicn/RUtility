@@ -27,7 +27,10 @@ The equation can abbreviate to
 
 ![image](https://latex.codecogs.com/gif.latex?%5Cwidehat%7By%7D%20%3D%20Hy)
 
+Each observation's leaverage is in the diagonal of matrix H 
+these elements consist 
 
+![image](https://latex.codecogs.com/gif.latex?%5CLARGE%20h_%7Bii%7D)
 
 
 
