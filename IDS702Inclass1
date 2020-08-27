@@ -1,0 +1,13 @@
+
+beer <- read.csv("Consumo_cerveja.csv",
+                 stringsAsFactors = FALSE, sep = ",",dec=",", nrows = 365)
+# rename the variables
+beer$date <- beer$Data
+beer$temp_median_c <- beer$Temperatura.Media..C.
+beer$temp_min_c <- beer$Temperatura.Minima..C.
+beer$temp_max_c <- beer$Temperatura.Maxima..C.
+beer$precip_mm <- beer$Precipitacao..mm.
+beer$weekend <- factor(beer$Final.de.Semana)
+beer$beer_cons_liters <- as.numeric(beer$Consumo.de.cerveja..litros.)
+beer <- beer[ , 8:ncol(beer)]
+
