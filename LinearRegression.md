@@ -61,14 +61,23 @@ text(x=c(1:n)[lev_scores > (2*p/n)]+c(rep(2,4),-2,2),y=lev_scores[lev_scores > (
 ```
 ![image](https://note.youdao.com/yws/public/resource/0e29b13ca4589bcb98e3c7e0e7314081/xmlnote/30AA4E789ECC462390FC36537AC6E58C/59310)
 
+* Explain *
+
+The red line mean data's levarage score is higher than thresholdh. 
+However, if their value is not near 1, it's OK 
+
 
 #### Cook Distance
 ```
 plot(model,which=4,col=c("blue4"))
 ```
-
 ![image](https://note.youdao.com/yws/public/resource/0e29b13ca4589bcb98e3c7e0e7314081/xmlnote/5050725C5D354E34B97E419A272FABB0/59308)
 
+* Explain *
+
+Di - Cook Distance for data point i
+
+The consensus seems to be that Di > 1 indicates an observation is an influential value, but we generally pay attention to observations with  Di > 0.5.
 
 
 #### Residule
@@ -76,6 +85,15 @@ plot(model,which=4,col=c("blue4"))
 plot(model,which=5,col=c("blue4"))
 ```
 ![image](https://note.youdao.com/yws/public/resource/0e29b13ca4589bcb98e3c7e0e7314081/xmlnote/B48F81B3436D4990B97C7C9DB4FB6842/59306)
+
+* Explain *
+
+If a data point's standardized residuals > 2, it's a outlier 
+
+If it's cook distance > 1, then it has high effect on fit model. 
+
+So, an outlier is not necessary have high effect on model. Then it's a good news. 
+
 
 #### Validation and MES Evaluation
 
